@@ -12,14 +12,11 @@
 annotate_circle_ggplot <- function(radius, x_center, y_center, color = "black",
                                    fill = NA, ...) {
 
-  # Load ggplot2
-  library(ggplot2)
-
   # Set x and y values and and create annotation.
   x <- x_center + radius * cos(seq(0, pi, length.out=100))
   ymin <- y_center + radius * sin(seq(0, -pi, length.out=100))
   ymax <- y_center + radius * sin(seq(0, pi, length.out=100))
   ggplot2::annotate("ribbon", x = x, ymin = ymin, ymax = ymax, color = color,
-                    fill=fill, ...)
+                    fill = fill, ...)
 
 }

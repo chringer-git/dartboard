@@ -1,13 +1,10 @@
-#' Create a dartboard with SEM measurments.
+#' Create a dartboard with Standard measurments.
 #'
 #' @return A list object containing data.table objects describing the dimesions of
 #'         the dartboard. These are stored in data.tables called bed_angles, bed_values,
 #'         bull_values, outer_ring_values
 #' @export
 create_dartboard <- function() {
-
-  # load libraries
-  library(data.table)
 
   # Constants for labels and angles of beds in Radians.
   bed_labels <- c(6, 13, 4, 18, 1, 20, 5, 12, 9, 14,
@@ -26,8 +23,10 @@ create_dartboard <- function() {
   # Distances from center cork for each scoring value of the bed
   # this is a vector from center out for ("lower single", "treble",
   # "upper single", "double") in inches...this is a British game is it not?
-  min_distance    <- c(0 + 5/8, 3 + 7/8, 4 + 1/4, 6 + 1/2)
-  max_distance    <- c(3 + 7/8, 4 + 1/4, 6 + 1/2, 6 + 7/8)
+  # I used the following measurements in mm and converted into Standard rounded
+  # to the nearest 1/16th of an inch.
+  min_distance    <- c(0 +   5/8, 3 + 13/16, 4 +  1/4, 6 +  5/16)
+  max_distance    <- c(3 + 13/16, 4 +   1/4, 6 + 5/16, 6 + 11/16)
   aim_distance    <- (min_distance + max_distance) / 2
   bed_multipliers <- c(1, 3, 1, 2)
   bed_values      <- data.table::data.table(
@@ -54,9 +53,9 @@ create_dartboard <- function() {
   # Distances of outer rign of board. For drawing purposes
   outer_ring_values <- data.table::data.table(
     "outer_ring_value" = 0,
-    "min_distance" = 6 + 7/8,
-    "max_distance" = 9 + 1/8,
-    "label_distance" = (6 + 7/8 + 9 + 1/8) / 2
+    "min_distance" = 6 + 11/16,
+    "max_distance" = 9,
+    "label_distance" = (6 + 7/8 + 9) / 2
     )
 
   # Put all in a list

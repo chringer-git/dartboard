@@ -1,6 +1,6 @@
 Package: dartboard
 Type: Package
-Title: Creates the dimensions of a dartboard and draws it.
+Title: Creates the dimensions of a dartboard and draws it
 Version: 0.1.0
 Authors@R: person("Chris", "Ermatinger", email = "chris.ermatinger@gmail.com", 
     role = c("aut", "cre"))

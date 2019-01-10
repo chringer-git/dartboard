@@ -6,10 +6,6 @@
 #' @export
 draw_dartboard <- function(db) {
 
-  # Load libraries
-  library(ggplot2)
-  library(data.table)
-
   # Add rings to the dartboard
   plot_d <- ggplot2::ggplot() +
     lapply(X = db$bed_values$max_distance,
