@@ -1,0 +1,16 @@
+Package: dartboard
+Type: Package
+Title: Creates the dimensions of a dartboard and draws it.
+Version: 0.0.1
+Authors@R: person("Chris", "Ermatinger", email = "chris.ermatinger@gmail.com", 
+    role = c("aut", "cre"))
+Description: This package creates a list object containg data.tables with all the 
+    dartboard dimensions, create_dartboard(). This package will also draw the 
+    dartboard object using ggplot2.
+License: file LICENSE
+Imports:
+    data.table (>= 1.11.8),
+    ggplot2 (>= 3.1.0)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
