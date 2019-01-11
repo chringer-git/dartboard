@@ -14,19 +14,21 @@ You can install the released version of dartboard from [GitHub](https://github.c
 devtools::install_github("chringer-git/dartboard")
 ```
 
-Example
--------
+Walkthrough
+-----------
 
-For instance, you can draw the dartboard with a few simple functions.
+### Example 1: Create a dartboard
 
 ``` r
 library(dartboard)
 
-# Create dartboard
 db <- create_dartboard()
+```
 
-# Draw dartboard and return a ggplot2 object
+### Example 2: Draw the dartboard
+
+``` r
 draw_dartboard(db)
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-draw_dartboard-1.png" width="100%" />
