@@ -8,15 +8,15 @@ draw_dartboard <- function(db) {
 
   # Add rings to the dartboard
   plot_d <- ggplot2::ggplot() +
-    lapply(X = db$bed_values$max_distance,
+    lapply(X = db$bed_values$max_radius,
            FUN = function(x) annotate_circle_ggplot(radius = x,
                                                     x_center = 0,
                                                     y_center = 0)) +
-    lapply(X = db$bull_values$max_distance,
+    lapply(X = db$bull_values$max_radius,
            FUN = function(x) annotate_circle_ggplot(radius = x,
                                                     x_center = 0,
                                                     y_center = 0)) +
-    lapply(X = db$outer_ring$max_distance,
+    lapply(X = db$outer_ring$max_radius,
            FUN = function(x) annotate_circle_ggplot(radius = x,
                                                     x_center = 0,
                                                     y_center = 0)) +
@@ -27,26 +27,26 @@ draw_dartboard <- function(db) {
     data.table::data.table(
       "x_min" = unlist(lapply(X = c(1:20),
                               FUN = function(x) pol_to_cart(
-                                radius = min(db$bed_values$min_distance),
-                                theta = db$bed_angles$bed_lower_angle[x])$x
+                                radius = min(db$bed_values$min_radius),
+                                theta = db$bed_thetas$bed_lower_theta[x])$x
                               )
                        ),
       "y_min" = unlist(lapply(X = c(1:20),
                               FUN = function(x) pol_to_cart(
-                                radius = min(db$bed_values$min_distance),
-                                theta = db$bed_angles$bed_lower_angle[x])$y
+                                radius = min(db$bed_values$min_radius),
+                                theta = db$bed_thetas$bed_lower_theta[x])$y
                               )
                        ),
       "x_max" = unlist(lapply(X = c(1:20),
                               FUN = function(x) pol_to_cart(
-                                radius = max(db$bed_values$max_distance),
-                                theta = db$bed_angles$bed_lower_angle[x])$x
+                                radius = max(db$bed_values$max_radius),
+                                theta = db$bed_thetas$bed_lower_theta[x])$x
                               )
                        ),
       "y_max" = unlist(lapply(X = c(1:20),
                               FUN = function(x) pol_to_cart(
-                                radius = max(db$bed_values$max_distance),
-                                theta = db$bed_angles$bed_lower_angle[x])$y
+                                radius = max(db$bed_values$max_radius),
+                                theta = db$bed_thetas$bed_lower_theta[x])$y
                               )
                        )
       )
@@ -58,17 +58,17 @@ draw_dartboard <- function(db) {
   bed_labels <- data.table::data.table(
     "x" = unlist(lapply(X = c(1:20),
                         FUN = function(x) pol_to_cart(
-                          radius = min(db$outer_ring$label_distance),
-                          db$bed_angles$bed_mid_angle[x])$x
+                          radius = min(db$outer_ring$label_radius),
+                          db$bed_thetas$bed_mid_theta[x])$x
                         )
                  ),
     "y" = unlist(lapply(X = c(1:20),
                         FUN = function(x) pol_to_cart(
-                          radius = min(db$outer_ring$label_distance),
-                          theta = db$bed_angles$bed_mid_angle[x])$y
+                          radius = min(db$outer_ring$label_radius),
+                          theta = db$bed_thetas$bed_mid_theta[x])$y
                         )
                  ),
-    "label" = db$bed_angles$bed_labels)
+    "label" = db$bed_thetas$bed_labels)
   plot_d <- plot_d +
     ggplot2::geom_text(data = bed_labels, ggplot2::aes(x = x, y= y,
                                                        label = label))
@@ -82,6 +82,7 @@ draw_dartboard <- function(db) {
                    axis.text = ggplot2::element_blank(),
                    axis.ticks = ggplot2::element_blank())
 
+  # Return plot
   plot_d
 
 }

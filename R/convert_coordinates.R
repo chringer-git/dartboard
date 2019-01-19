@@ -17,6 +17,7 @@ pol_to_cart <- function(radius, theta) {
   cart$x <- x
   cart$y <- y
 
+  # Return cartesian coordinates
   cart
 
 }
@@ -50,6 +51,7 @@ cart_to_pol <- function(x, y) {
   pols$radius <- radius
   pols$theta <- theta
 
+  # Return polar coordinates
   pols
 
 }
