@@ -1,6 +1,9 @@
 #' Function to help draw a cirle in ggplot2.
 #'
-#' I found it on the internet, I need to give credit at some point
+#' I found it on the internet, I need to give credit at some point. But this
+#' helps to create circles at a specified radius from a cartesian point.
+#'
+#' This function is not exported.
 #'
 #' @param radius is the radius
 #' @param x_center is the x0 coordiante

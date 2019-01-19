@@ -2,15 +2,17 @@
 % Please edit documentation in R/create_dartboard.R
 \name{create_dartboard}
 \alias{create_dartboard}
-\title{Create a dartboard with SEM measurments.}
+\title{Create a dartboard with Standard measurments.}
 \usage{
 create_dartboard()
 }
 \value{
 A list object containing data.table objects describing the dimesions of
-        the dartboard. These are stored in data.tables called bed_angles, bed_values,
+        the dartboard. These are stored in data.tables called bed_thetas, bed_values,
         bull_values, outer_ring_values
 }
 \description{
-Create a dartboard with SEM measurments.
+This function returns a list containing data.table objects describing the dimesions of
+        the dartboard. These are stored in data.tables called bed_thetas, bed_values,
+        bull_values, outer_ring_values.
 }

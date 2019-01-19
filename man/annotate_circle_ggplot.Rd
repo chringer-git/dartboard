@@ -22,5 +22,9 @@ annotate_circle_ggplot(radius, x_center, y_center, color = "black",
 A ggplot2 line object that is a circle.
 }
 \description{
-I found it on the internet, I need to give credit at some point
+I found it on the internet, I need to give credit at some point. But this
+helps to create circles at a specified radius from a cartesian point.
+}
+\details{
+This function is not exported.
 }

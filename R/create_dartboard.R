@@ -1,5 +1,9 @@
 #' Create a dartboard with Standard measurments.
 #'
+#' This function returns a list containing data.table objects describing the dimesions of
+#'         the dartboard. These are stored in data.tables called bed_thetas, bed_values,
+#'         bull_values, outer_ring_values.
+#'
 #' @return A list object containing data.table objects describing the dimesions of
 #'         the dartboard. These are stored in data.tables called bed_thetas, bed_values,
 #'         bull_values, outer_ring_values
